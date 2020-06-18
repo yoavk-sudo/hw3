@@ -19,7 +19,9 @@ namespace mtm {
         int height() const;
         int width() const;
         int size() const;
+        IntMatrix transpose() const ;
+        friend IntMatrix operator+(const IntMatrix& matrix1, const IntMatrix& matrix2);
+        IntMatrix operator-() const ;
     };
-
 }
 #endif //HW3_INTMATRIX_H
