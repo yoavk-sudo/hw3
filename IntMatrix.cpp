@@ -33,6 +33,40 @@ IntMatrix::~IntMatrix()
     delete[] row;
 }
 
+IntMatrix IntMatrix::Identity(const Dimensions dim) {
+    IntMatrix matrix = IntMatrix(dim);
+    row = new int*[matrix.dim_row];
+    for (int i = 0; i < matrix.dim_row; ++i) {
+        row[i][i] = 1;
+    }
+    return matrix;
+}
+
+std::ostream& mtm::operator<<(std::ostream& os, const IntMatrix& matrix) {
+    int* flatMatrix = new int[matrix.size()];
+    int counter = 0;
+    Dimensions dims(matrix.height(), matrix.width());
+    for (int i = 0; i < matrix.height(); ++i) {
+        for (int j = 0; j < matrix.width(); ++j) {
+            flatMatrix[counter++] = matrix.row[i][j];
+        }
+    }
+    os << (printMatrix(flatMatrix, dims));
+    return os;
+}
+
+int IntMatrix::width() const {
+    return dim_col;
+}
+
+int IntMatrix::height() const {
+    return dim_row;
+}
+
+int IntMatrix::size() const {
+    return dim_row*dim_col;
+}
+
 IntMatrix& IntMatrix::operator=(const IntMatrix& matrix)
 {
     if(this == & matrix)
@@ -62,18 +96,6 @@ IntMatrix& IntMatrix::operator=(const IntMatrix& matrix)
         }
     }
     return *this;
-}
-
-int IntMatrix::width() const {
-    return dim_col;
-}
-
-int IntMatrix::height() const {
-    return dim_row;
-}
-
-int IntMatrix::size() const {
-    return dim_row*dim_col;
 }
 
 IntMatrix IntMatrix::transpose() const
@@ -114,4 +136,3 @@ IntMatrix IntMatrix::operator-() const {
     }
     return matrix;
 }
-
