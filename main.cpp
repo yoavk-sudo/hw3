@@ -2,10 +2,13 @@
 // Created by Ron Dahan on 18/06/2020.
 //
 #include <iostream>
-
+#include "Auxiliaries.h"
+#include "IntMatrix.h"
+using namespace mtm;
 
 int main() {
-    std::cout << "Hello, World!" << std::endl;
+    Dimensions d(5,5);
+    IntMatrix(d,3);
     return 0;
 }
 

@@ -4,8 +4,22 @@
 
 #ifndef HW3_INTMATRIX_H
 #define HW3_INTMATRIX_H
-namespace mtm{
 
+#include "Auxiliaries.h"
+
+namespace mtm {
+    class IntMatrix {
+        int** row;
+        int dim_row;
+        int dim_col;
+    public:
+        IntMatrix(const Dimensions& dimensions, int value = 0);
+        ~IntMatrix();
+        IntMatrix& operator=(const IntMatrix& matrix);
+        int height() const;
+        int width() const;
+        int size() const;
+    };
 
 }
 #endif //HW3_INTMATRIX_H
