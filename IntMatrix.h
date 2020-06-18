@@ -22,6 +22,7 @@ namespace mtm {
         IntMatrix transpose() const ;
         friend IntMatrix operator+(const IntMatrix& matrix1, const IntMatrix& matrix2);
         IntMatrix operator-() const ;
+        int b;
     };
 }
 #endif //HW3_INTMATRIX_H

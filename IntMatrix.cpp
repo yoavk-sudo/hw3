@@ -70,6 +70,7 @@ int IntMatrix::width() const {
 
 int IntMatrix::height() const {
     return dim_row;
+    int b;
 }
 
 int IntMatrix::size() const {
