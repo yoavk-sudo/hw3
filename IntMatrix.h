@@ -13,7 +13,7 @@ namespace mtm {
         int dim_row;
         int dim_col;
     public:
-        IntMatrix(const Dimensions& dimensions, int value = 0);
+        explicit IntMatrix(const Dimensions& dimensions, int value = 0);
         ~IntMatrix();
         IntMatrix& operator=(const IntMatrix& matrix);
         int height() const;

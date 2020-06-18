@@ -8,7 +8,7 @@ using namespace mtm;
 
 int main() {
     Dimensions d(5,5);
-    IntMatrix(d,3);
+    IntMatrix m(d,3);
     return 0;
 }
 
