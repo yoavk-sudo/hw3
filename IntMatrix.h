@@ -4,5 +4,8 @@
 
 #ifndef HW3_INTMATRIX_H
 #define HW3_INTMATRIX_H
+namespace mtm{
 
+
+}
 #endif //HW3_INTMATRIX_H
